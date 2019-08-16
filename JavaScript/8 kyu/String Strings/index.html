@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<body>
+<h1>Stringy Strings</h1>
+
+<p id="test"></p>
+
+<script>
+
+  function stringy(size) {
+
+    var binary = "";
+
+    // var i;
+
+    for(var i = 2; i <= size; i++) {
+
+      binary += i;
+
+      var digits = (""+binary).split("");
+
+      divisiblebyTwo = digits % 2 === 0 ? 1 : 0;
+
+      // if (i % = 0) {number = 0}
+      // if (i % != 0) {number = 1}
+
+      // numbers[r][c] = (numbers[r][c]) % 2 === 0 ? 0: 1;
+
+    }
+
+    // for (var c = )
+
+    document.getElementById('test').innerHTML = divisiblebyTwo;
+
+    console.log(digits);
+
+    console.log(binary);
+
+    console.log(divisiblebyTwo);
+
+
+
+  }
+
+  stringy(10);
+
+
+</script>
+
+</body>
+
+</html>

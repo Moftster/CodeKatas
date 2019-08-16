@@ -1,0 +1,31 @@
+<script>
+
+function fakeBin(x){
+
+  // var testText = "Hello world";
+  //
+  // console.log(testText);
+
+  var replaceLow = x.replace(/[0-4]/g, "0");
+
+  var replaceHigh = replaceLow.replace(/[4-9]/g, "1");
+
+  return replaceHigh;
+
+  console.log(replaceHigh);
+
+  // var str = "Visit Microsoft!";
+  //
+  // var res = str.replace("Microsoft", "W3Schools");
+  //
+  // console.log(res);
+
+
+}
+
+fakeBin('45385593107843568');
+
+// console.log("Testing");
+
+
+</script>
