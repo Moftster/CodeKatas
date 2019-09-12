@@ -1,52 +1,74 @@
 <?php
 
 function vertMirror($s) {
-    // $inputOrder = "abcd\nefgh\nijkl\nmnop";
-    // $outputOrder = "dcba\nhgfe\nlkji\nponm";
-    // $reverseOne = strtr($s, "abcd\nefgh\nijkl\nmnop\nqrst\nuvwx\nyz", "dcba\nhgfe\nlkji\nponm\ntsrq\nxwvu\nzy");
-    // echo $reverseOne;
-    // return $reverseOne;
 
     $splitString = explode("\n", $s);
 
-    function theMagic ($stringRev) {
-      $reverseString = strrev($stringRev);
-      return $reverseString;
-    }
 
-    $magic = array_map('theMagic', $splitString);
+    $magic = array_map(function ($stringRev) {
 
-    $backtoString = implode($magic);
+          $reverseString = strrev($stringRev);
+
+          return $reverseString;
+
+        }, $splitString);
+
+    $backtoString = implode("\n", $magic);
 
     print_r($backtoString);
+
+    return $backtoString;
 }
+
 function horMirror($s) {
-    $reverseTwo = strrev($s);
-    echo $reverseTwo;
-    return $reverseTwo;
+
+    $splitStringTwo = explode("\n", $s);
+
+    $reverseArray = array_reverse($splitStringTwo);
+
+    $backtoStringTwo = implode("\n", $reverseArray);
+
+    print_r($backtoStringTwo);
+
+    return $backtoStringTwo;
+
 }
 function oper($fct, $s) {
-  if($fct == 'vert_mirror') {
-    $reverseOne = strtr($s, "abcd\nefgh\nijkl\nmnop\nqrst\nuvwx\nyz", "dcba\nhgfe\nlkji\nponm\ntsrq\nxwvu\nzy");
-    echo $reverseOne;
-    return $reverseOne;
+  if($fct == 'vertMirror') {
+
+    $splitString = explode("\n", $s);
+
+    $magic = array_map(function ($stringRev) {
+
+          $reverseString = strrev($stringRev);
+
+          return $reverseString;
+
+        }, $splitString);
+
+    $backtoString = implode("\n", $magic);
+
+    print_r($backtoString);
+
+    return $backtoString;
+
   } else {
-    $reverseTwo = strtr($s, "abcd\nefgh\nijkl\nmnop\nqrst\nuvwx\nyz", "yz\nuvwx\nqrst\nmnop\nijkl\nefgh\nabcd");
-    echo $reverseTwo;
-    return $reverseTwo;
+
+    $splitStringTwo = explode("\n", $s);
+
+    $reverseArray = array_reverse($splitStringTwo);
+
+    $backtoStringTwo = implode("\n", $reverseArray);
+
+    print_r($backtoStringTwo);
+
+    return $backtoStringTwo;
+
   }
 }
 
-
-// $test = "abcd\nefgh\nijkl\nmnop";
-//
-
+$function = "vertMirror";
 
 $test = "hSgdHQ\nHnDMao\nClNNxX\niRvxxH\nbqTVvA\nwvSyRu";
 
-vertMirror($test);
-
-// $function = 'vert_mirror';
-
-
-// oper($function, $test);
+oper($function, $test);
