@@ -2,11 +2,13 @@
 
 function decode_morse(string $code): string {
     // split string by words
+
+    $previousValue = "";
               
     $answer = "";
     
     $splitString = explode(" ", $code);
-    print_r($splitString);
+    // print_r($splitString);
     
     // $a = array_map('strval', $splitString);
                             
@@ -39,24 +41,34 @@ function decode_morse(string $code): string {
         '-..-' => 'X',
         '-.--' => 'Y', 
         '--..' => 'Z',
-        ' ' => ' '
+        // ' ' => ' '
                      
               ];
               
     foreach($splitString as $string) {
-            if(empty($string)) {
-                        $answer .= " ";
-            }
-            elseif (empty($string) && empty(prev($splitString))) {
-                        $answer .= "";
-            
-            } else {
+
+        if($string === "" && $previousValue === "") {
+            $answer .= " ";
+
+            // $answer .= "TWO BLANKS";
+            // echo "test";
+        }
+        // if ($string == $answer) {
+        //     $answer .= "";
+
+        //     } 
+            // elseif(empty($string)) {
+            //             $answer .= " ";
+            // }
+            else {
             
             $newLetter = strtr($string, $strParams);
             
             // echo $string . "<br>";
             
             // echo $newLetter . "<br>";
+
+            $previousValue = $string;
             
             $answer .= $newLetter;
                         
