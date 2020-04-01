@@ -1,0 +1,5 @@
+<?php 
+
+function sumFracts($l) {
+    
+}
