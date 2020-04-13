@@ -2,18 +2,56 @@
 
 function dirReduc($arr){
 
-    // Convert to same case
+    $arr = array_map('strtolower', $arr);
 
-    // Count values in array
+    $north = 0;
+    $south = 0;
+    $east = 0;
+    $west = 0;
 
-    // North vs South - if one higher than the other it goes to array
-
-    // East vs West - if one higher than the other it goes to array
-    
     foreach($arr as $a) {
-        echo $a . "<br>";
+        if($a === "north") {
+            $north += 1;
+        }
+        if($a === "south") {
+            $south += 1;
+        }
+        if($a === "east") {
+            $east += 1;
+        }
+        if($a === "west") {
+            $west += 1;
+        }
     }
+
+    $northOrSouth = $north - $south;
+
+    $eastOrWest = $east - $west;
+
+    $newDirections = [];
+
+    if($northOrSouth > 0) {
+        $newDirections[] = "north";
+    } elseif($northOrSouth < 0) {
+        $newDirections[] = "south";
+    } 
+
+    if($eastOrWest > 0) {
+        $newDirections[] = "east";
+    } elseif($eastOrWest < 0) {
+        $newDirections[] = "west";
+    } 
+
+    print_r($newDirections);
+
 }
 
 $a = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"];
-dirReduc($a);
+dirReduc($a); // Answer WEST
+
+$c = ["NORTH","SOUTH","SOUTH","EAST","WEST","NORTH","NORTH"];
+// dirReduc($c); // Answer NORTH
+
+$b=["NORTH","SOUTH","SOUTH","EAST","WEST","NORTH"];
+dirReduc($b); // Answer empty array
+
