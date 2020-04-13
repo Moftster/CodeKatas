@@ -41,7 +41,7 @@ $repeatedCharacters = "";
 
 // duplicateCount("aabBcde0412551");
 // duplicateCount("Indivisibilities");
-duplicateCount("");
-duplicateCount("abcde");
+// duplicateCount("");
+// duplicateCount("abcde");
 duplicateCount("aabBcde");
 // duplicateCount("Indivisibility");
