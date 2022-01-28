@@ -10,8 +10,6 @@
 // D 500
 // M 1000
 
-<?php
-
 function calculateRomanNumerals ($n) {
     $romanNumerals = '';
 
