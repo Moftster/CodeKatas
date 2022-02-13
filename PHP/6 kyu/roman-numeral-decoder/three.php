@@ -1,11 +1,6 @@
 <?php 
 
-// echo "this is a new line\n";
-// echo "this is a new line\n";
-// echo "this is a new line";
-
 function numeralToNumber ($numeral) {
-
     $arrayOfNumerals = [
         'M' => 1000,
         'CM' => 900,
@@ -24,7 +19,7 @@ function numeralToNumber ($numeral) {
 
     $totalValue = 0;
     
-    foreach($arrayOfNumerals as $key => $value) {
+    foreach ($arrayOfNumerals as $key => $value) {
         while(strpos($numeral, $key) === 0) {
             $totalValue += $value;
             $numeral = substr($numeral, strlen($key));
@@ -36,7 +31,5 @@ function numeralToNumber ($numeral) {
     return $totalValue;
 }
 
-// numeralToNumber('XII');
-// numeralToNumber('IV');
-// numeralToNumber('MMXVII');
+// numeralToNumber('X');
 numeralToNumber('MCCCXXXVII');
